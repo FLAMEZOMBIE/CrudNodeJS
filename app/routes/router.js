@@ -7,7 +7,7 @@ router.get("/get", async(req, res) => {
 
     return res.json({
         code: 200,
-        message: "Sukses Get Data",
+        message: "get complete",
         success: true,
         data: query
     })
@@ -16,16 +16,18 @@ router.get("/get", async(req, res) => {
 // Menambah User
 router.post("/post", async(req, res) => {
     let model = {
-        nama: req.body.nama,
+        username: req.body.username,
         email: req.body.email,
-        nomor: req.body.nomor
+        password: req.body.password,
+        confirmpassword: req.body.confirmpassword,
     }
+
 
     let query = await User.create(model);
 
     return res.json({
         code: 201,
-        message: "Sukses Insert Data",
+        message: "insert complete",
         success: true,
         data: query
     })
@@ -41,21 +43,22 @@ router.get("/edit/:id", async(req, res) => {
 router.put("/edit", (req, res) => {
     User.update({ _id: req.query.id }, {
             $set: {
-                nama: req.body.nama,
+                username: req.body.username,
                 email: req.body.email,
-                nomor: req.body.nomor
+                password: req.body.password,
+                confirmpassword: req.body.confirmpassword,
             }
         })
         .then(data => {
-            res.send('Sukses update CUYYY')
+            res.send('update complete')
         })
 })
 
 
 // Menghapus User
-router.delete("/edit/", async(req, res) => {
+router.delete("/delete/", async(req, res) => {
     const id = req.query.id
     User.findByIdAndRemove(id)
-        .then(data => res.send("Sukses Delete CUYYYY"))
+        .then(data => res.send("delete complete"))
 })
 module.exports = router;

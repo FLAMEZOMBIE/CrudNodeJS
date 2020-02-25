@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 // mendefinisikan router
 app.get('/', (req, res) => {
     res.json({
-        "message": "Selamat datang Di Web server nodejs dan mongoDB dan Point Blank ZEPETTO Indonesia"
+        "message": "Selamat datang Point Blank ZEPETTO Indonesia"
     });
 });
 
@@ -33,7 +33,7 @@ mongoose.Promise = global.Promise;
 // koneksi Ke Database
 mongoose.connect(dbConfig.url)
     .then(() => {
-        console.log("Successfully Sekarang Anda Terkonek Ke database");
+        console.log("Selamat datang di Pekalongan Cheater Community");
     }).catch(err => {
         console.log('Error database Tidak Terkoneksi atau Tidak Ada');
         process.exit();
