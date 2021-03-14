@@ -20,6 +20,11 @@ router.post("/post", async(req, res) => {
         email: req.body.email,
         password: req.body.password,
         confirmpassword: req.body.confirmpassword,
+        alamat: {
+            jalan: req.body.jalan,
+            kota: req.body.kota,
+            kecamatan: req.body.kecamatan
+        }
     }
 
 
@@ -47,6 +52,11 @@ router.put("/edit", (req, res) => {
                 email: req.body.email,
                 password: req.body.password,
                 confirmpassword: req.body.confirmpassword,
+                alamat: {
+                    jalan: req.body.jalan,
+                    kota: req.body.kota,
+                    kecamatan: req.body.kecamatan
+                }
             }
         })
         .then(data => {
