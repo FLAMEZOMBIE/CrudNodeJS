@@ -17,6 +17,20 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    alamat: {
+        jalan: {
+            type: String,
+            required: true
+        },
+        kota: {
+            type: String,
+            required: true
+        },
+        kecamatan: {
+            type: String,
+            required: true
+        },
+    }
     // desa: {
     //     type: String,
     //     required: true
